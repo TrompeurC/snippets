@@ -5,7 +5,7 @@ import { data } from './data'
 import { DataContext, DataType } from './context/listContext'
 
 const App = memo(() => {
-  const [list, setList] = useState<DataType[]>(data)
+  const [list, setList] = useState<DataType[]>([])
 
   return (
     <div>

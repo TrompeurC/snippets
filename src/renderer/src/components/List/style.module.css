@@ -1,0 +1,18 @@
+/* BEGIN: Line Selection Style */
+
+.list {
+  @apply  px-3 pt-3 rounded-b-xl bg-slate-50 -mt-3 text-slate-400 text-sm;
+}
+
+.list-item {
+  /* background-color: #f0f0f0; */
+  transition: background-color 0.3s ease;
+  @apply truncate py-1 px-2 rounded-sm;
+}
+
+
+.list-item.active {
+  background-color: #c0c0c0;
+  @apply text-slate-100;
+}
+/* END: Line Selection Style */

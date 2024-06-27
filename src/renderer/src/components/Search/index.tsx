@@ -12,7 +12,7 @@ const Search = memo(() => {
     if (val) {
       setList(data.filter(item => item.content.toLowerCase().includes(val.toLowerCase())))
     } else {
-      setList(data)
+      setList([])
     }
   }
 
