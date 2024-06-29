@@ -1,8 +1,15 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  hiddenWindow() {
+    ipcRenderer.send('hiddenWindow')
+  },
+  async registerShortCut(type: 'search', shortCut: string) {
+    return await ipcRenderer.invoke('shortCut', type, shortCut)
+  }
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

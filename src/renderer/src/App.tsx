@@ -1,18 +1,18 @@
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import Search from './components/Search'
 import List from './components/List'
-import { data } from './data'
-import { DataContext, DataType } from './context/listContext'
+import * as utils from '@renderer/utils'
 
 const App = memo(() => {
-  const [list, setList] = useState<DataType[]>([])
-
+  setTimeout(() => {
+    utils.shortCut('search', 'CommandOrControl+shift+;')
+  })
   return (
     <div>
-      <DataContext.Provider value={{ list, setList }}>
-        <Search />
-        <List />
-      </DataContext.Provider>
+      {/* <DataContext.Provider value={{ list, setList }}> */}
+      <Search />
+      <List />
+      {/* </DataContext.Provider> */}
     </div>
   )
 })
