@@ -6,11 +6,11 @@
 
 .not-drag,
 input,
-selet,
+select,
 textarea {
   -webkit-app-region: no-drag;
 }
 
 body {
-  background: #000;
+  @apply h-screen;
 }

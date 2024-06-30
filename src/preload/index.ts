@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { IgnoreMouseEventsOptions, contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
@@ -8,6 +8,9 @@ const api = {
   },
   async registerShortCut(type: 'search', shortCut: string) {
     return await ipcRenderer.invoke('shortCut', type, shortCut)
+  },
+  setIgnoreMouseEvent(ignore: boolean, options?: IgnoreMouseEventsOptions) {
+    ipcRenderer.send('setIgnoreMouseEvent', ignore, options)
   }
 }
 

@@ -6,8 +6,8 @@ import icon from '../../../resources/icon.png?asset'
 export function createWindow(): BrowserWindow {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 600,
+    width: 400,
+    height: 400,
     show: false,
     frame: false,
     resizable: false,
@@ -19,9 +19,16 @@ export function createWindow(): BrowserWindow {
       sandbox: false
     }
   })
-
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+  })
+
+  mainWindow.on('show', () => {
+    mainWindow.setIgnoreMouseEvents(false)
+  })
+
+  mainWindow.on('focus', () => {
+    mainWindow.setIgnoreMouseEvents(false)
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

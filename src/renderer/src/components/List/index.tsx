@@ -7,13 +7,13 @@ const List = memo(() => {
   const { list, currentId, copy } = useList()
 
   return (
-    <div className={style.list}>
+    !!list.length && (<div className={style.list}>
       {
         list.map((item) => (
           <div onClick={() => copy(item)} className={cn([style['list-item'], { [style.active]: currentId === item.id }])} key={item.id}>{item.content}</div>
         ))
       }
-    </div >
+    </div >)
   )
 })
 

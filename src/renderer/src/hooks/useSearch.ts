@@ -4,13 +4,15 @@ import { ChangeEvent } from "react"
 
 export const useSearch = () => {
 
-  const { searchValue, setSearchValue, setList } = useConfigStore()
+  const { searchValue, setSearchValue, setList, setCurrentId } = useConfigStore()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const val = event.target.value
     setSearchValue(val)
     if (val) {
-      setList(data.filter(item => item.content.toLowerCase().includes(val.toLowerCase())))
+      const list = data.filter(item => item.content.toLowerCase().includes(val.toLowerCase()))
+      setList(list)
+      list[0] && setCurrentId(list[0].id)
     } else {
       setList([])
     }

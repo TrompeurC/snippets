@@ -6,6 +6,7 @@ declare global {
     api: {
       hiddenWindow: () => void
       registerShortCut: (type: 'search', shortCut: string) => Promise<boolean>
+      setIgnoreMouseEvent: (ignore: boolean, options?: IgnoreMouseEventsOptions) => void
     }
   }
 }
