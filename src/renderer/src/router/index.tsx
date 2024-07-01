@@ -1,5 +1,5 @@
-import Config from "@renderer/pages/Config";
-import Home from "@renderer/pages/Home";
+import Config from "@renderer/pages/Config/Config";
+import Home from "@renderer/pages/Home/Home";
 import {
   createHashRouter,
 } from "react-router-dom";

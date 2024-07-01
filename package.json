@@ -25,6 +25,8 @@
     "@electron-toolkit/utils": "^3.0.0",
     "@icon-park/react": "^1.4.2",
     "@remix-run/router": "^1.17.0",
+    "@types/better-sqlite3": "^7.6.10",
+    "better-sqlite3": "^11.1.1",
     "electron-updater": "^6.1.7",
     "react-router-dom": "^6.24.0",
     "zustand": "^4.5.4"
@@ -41,6 +43,7 @@
     "classnames": "^2.5.1",
     "electron": "^31.0.2",
     "electron-builder": "^24.13.3",
+    "electron-rebuild": "^3.2.9",
     "electron-vite": "^2.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.3",

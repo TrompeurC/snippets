@@ -1,13 +1,11 @@
 import { memo, useRef } from 'react'
 
 import * as utils from '@renderer/utils'
-import { useIgnoreMouseEvent } from './hooks/useIgnoreMouseEvent'
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
 
 const App = memo(() => {
   utils.shortCut('search', 'CommandOrControl+shift+;')
-
   // useDrag(elRef)
   return (
     <div>
