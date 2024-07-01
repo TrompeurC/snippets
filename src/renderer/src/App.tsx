@@ -7,11 +7,10 @@ import router from './router'
 
 const App = memo(() => {
   utils.shortCut('search', 'CommandOrControl+shift+;')
-  const elRef = useRef<HTMLDivElement>(null)
-  useIgnoreMouseEvent(elRef)
+
   // useDrag(elRef)
   return (
-    <div ref={elRef} className='box-border not-drag'>
+    <div>
       {/* <DataContext.Provider value={{ list, setList }}> */}
       {/* </DataContext.Provider> */}
       <RouterProvider router={router}></RouterProvider>

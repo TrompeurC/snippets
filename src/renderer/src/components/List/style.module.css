@@ -1,7 +1,7 @@
 /* BEGIN: Line Selection Style */
 
 .list {
-  @apply  px-3 pt-3 pb-3 rounded-b-xl bg-slate-50 -mt-3 text-slate-400 text-sm;
+  @apply  px-3 pt-3 pb-3 rounded-b-xl bg-slate-50 -mt-3  text-slate-400 text-sm;
 }
 
 .list-item {

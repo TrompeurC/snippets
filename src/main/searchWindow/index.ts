@@ -9,6 +9,10 @@ app.whenReady().then(() => {
   const win = createWindow()
   registerIpc(win)
   // registerShortCut(win)
+
+  win.on('show', () => {
+    win.setIgnoreMouseEvents(false)
+  })
 })
 
 

@@ -6,4 +6,8 @@ let win: BrowserWindow | null = null
 ipcMain.on('openConfigWindow', () => {
   if (win) return
   win = createWindow()
+
+  win.on('close', () => {
+    win = null
+  })
 })
