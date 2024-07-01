@@ -6,8 +6,8 @@ import { createWindow } from './window'
 
 
 app.whenReady().then(() => {
-  createWindow()
-  registerIpc()
+  const win = createWindow()
+  registerIpc(win)
   // registerShortCut(win)
 })
 

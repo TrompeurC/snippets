@@ -1,9 +1,9 @@
 import { memo, useRef } from 'react'
-import Search from './components/Search'
-import List from './components/List'
+
 import * as utils from '@renderer/utils'
 import { useIgnoreMouseEvent } from './hooks/useIgnoreMouseEvent'
-import { useDrag } from './hooks/useDrag'
+import { RouterProvider } from 'react-router-dom'
+import router from './router'
 
 const App = memo(() => {
   utils.shortCut('search', 'CommandOrControl+shift+;')
@@ -13,9 +13,8 @@ const App = memo(() => {
   return (
     <div ref={elRef} className='box-border not-drag'>
       {/* <DataContext.Provider value={{ list, setList }}> */}
-      <Search />
-      <List />
       {/* </DataContext.Provider> */}
+      <RouterProvider router={router}></RouterProvider>
     </div>
   )
 })

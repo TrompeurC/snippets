@@ -7,6 +7,7 @@ declare global {
       hiddenWindow: () => void
       registerShortCut: (type: 'search', shortCut: string) => Promise<boolean>
       setIgnoreMouseEvent: (ignore: boolean, options?: IgnoreMouseEventsOptions) => void
+      openConfigWindow: () => void
     }
   }
 }

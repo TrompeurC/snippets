@@ -5,7 +5,7 @@ import { memo } from 'react'
 const Search = memo(() => {
   const { searchValue, handleChange } = useSearch()
   const handleClick = () => {
-
+    window.api.openConfigWindow()
   }
   return (
     <div className='not-drag p-3  bg-slate-50 drag rounded-xl'>
