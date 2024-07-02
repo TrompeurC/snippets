@@ -1,4 +1,4 @@
-import { memo, useRef } from 'react'
+import { memo } from 'react'
 
 import * as utils from '@renderer/utils'
 import { RouterProvider } from 'react-router-dom'

@@ -1,5 +1,7 @@
-import Config from "@renderer/pages/Config/Config";
-import Home from "@renderer/pages/Home/Home";
+import Config from "@renderer/pages/Config";
+import Category from "@renderer/pages/Config/Category";
+import Content from "@renderer/pages/Config/Content";
+import Home from "@renderer/pages/Home";
 import {
   createHashRouter,
 } from "react-router-dom";
@@ -12,7 +14,19 @@ const router = createHashRouter([
   },
   {
     path: '/config',
-    element: <Config />
+    element: <Config />,
+    children: [
+      {
+        path: '',
+        element: <Category />,
+        children: [
+          {
+            index: true,
+            element: <Content />
+          }
+        ]
+      }
+    ]
   }
 ]);
 
