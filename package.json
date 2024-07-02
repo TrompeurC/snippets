@@ -26,7 +26,9 @@
     "@icon-park/react": "^1.4.2",
     "@remix-run/router": "^1.17.0",
     "@types/better-sqlite3": "^7.6.10",
+    "@types/mockjs": "^1.0.10",
     "better-sqlite3": "^11.1.1",
+    "dayjs": "^1.11.11",
     "electron-updater": "^6.1.7",
     "react-router-dom": "^6.24.0",
     "zustand": "^4.5.4"
@@ -47,6 +49,7 @@
     "electron-vite": "^2.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.3",
+    "mockjs": "^1.1.0",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
     "react": "^18.3.1",

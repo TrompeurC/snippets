@@ -4,7 +4,6 @@ import path from 'node:path'
 import fs from 'node:fs'
 
 const file = path.resolve(app.getPath('appData'), 'snippets')
-
 if (!fs.existsSync(file)) {
   fs.mkdirSync(file, { recursive: true })
 }

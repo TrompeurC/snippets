@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Outlet } from 'react-router-dom'
 
-const Config = memo(() => {
+const Category = memo(() => {
   return (
     <div className='h-screen'>
       <Outlet />
@@ -9,4 +9,4 @@ const Config = memo(() => {
   )
 })
 
-export default Config
+export default Category

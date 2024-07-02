@@ -1,14 +1,12 @@
 import { memo } from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 const Content = memo(() => {
+  const contentData = (useLoaderData() as ContentType[])[0]
   return (
-    <div className='flex h-full'>
-      <div className='h-full w-[150px] border-r box-border border-r-gray-200'>
-        title
-      </div>
-      <div className='flex-1'>
-        content
-      </div>
+    <div className='flex h-full flex-col gap-2 px-2'>
+      <p>{contentData.title}</p>
+      <p>{contentData.content}</p>
     </div>
   )
 })

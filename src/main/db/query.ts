@@ -1,6 +1,6 @@
 import db from "./connect"
 
-export const findAll = (sql: string, params: Record<string, any>) => {
+export const findAll = (sql: string, params: Array<string | number>) => {
   return db.prepare(sql).all(params)
 }
 

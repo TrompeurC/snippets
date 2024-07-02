@@ -7,7 +7,7 @@ import url from 'node:url'
 export function createWindow(): BrowserWindow {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 600,
+    width: 1200,
     height: 600,
     show: false,
     // frame: false,
@@ -32,14 +32,14 @@ export function createWindow(): BrowserWindow {
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
-    mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#config')
+    mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#config/category')
   } else {
     // mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
     mainWindow.loadURL(url.format({
       pathname: path.join(__dirname, '../renderer/index.html'),
       protocol: 'file:',
       slashes: true,
-      hash: '#/config'
+      hash: '#/config/category'
     }))
   }
   return mainWindow
