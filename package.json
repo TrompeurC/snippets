@@ -27,6 +27,7 @@
     "@remix-run/router": "^1.17.0",
     "@types/better-sqlite3": "^7.6.10",
     "@types/mockjs": "^1.0.10",
+    "antd": "^5.19.0",
     "better-sqlite3": "^11.1.1",
     "dayjs": "^1.11.11",
     "electron-updater": "^6.1.7",

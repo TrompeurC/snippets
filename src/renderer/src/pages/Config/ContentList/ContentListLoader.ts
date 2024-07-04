@@ -1,4 +1,21 @@
-export default ({ params }) => {
-  const { id } = params
-  return window.api.sql(`SELECT * FROM contents WHERE category_id = ${id}`, 'findAll',)
+
+export default async ({ params, request }) => {
+  const url = new URL(request.url)
+  const searchWord = url.searchParams.get('searchWord')
+  const { cid } = params
+  let sql = `select * from contents `
+  if (searchWord && cid != 0) {
+    sql += ` where title like @searchWord AND category_id=@category_id order by id desc`
+    return window.api.sql(sql, 'findAll', { searchWord: `%${searchWord}%`, category_id: cid })
+  }
+  if (searchWord && cid == 0) {
+    sql += ` where title like @searchWord order by id desc`
+    return window.api.sql(sql, 'findAll', { searchWord: `%${searchWord}%` })
+  }
+  if (cid != 0) {
+    sql += `where category_id=${cid}`
+  }
+
+  sql += ' order by id desc'
+  return window.api.sql(sql, 'findAll')
 }

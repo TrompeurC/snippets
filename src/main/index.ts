@@ -3,7 +3,7 @@ import { electronApp, optimizer } from '@electron-toolkit/utils'
 import { createWindow } from './searchWindow'
 import './configWindow/index'
 import './db'
-
+import './menu'
 
 
 // This method will be called when Electron has finished

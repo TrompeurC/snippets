@@ -20,12 +20,12 @@ function init() {
       )
   `)
 
-  for (let i = 0; i < 10; i++) {
-    db.prepare('INSERT INTO category (name) VALUES (?)').run(`category ${Random.title(5, 20)}`)
-    for (let j = 1; j < 30; j++) {
-      db.prepare('INSERT INTO contents (content, title, category_id) VALUES (?, ?, ?)').run(Random.cparagraph(5, 20), Random.title(5, 20), i)
-    }
-  }
+  // for (let i = 0; i < 10; i++) {
+  //   db.prepare('INSERT INTO category (name) VALUES (?)').run(`category ${Random.title(5, 20)}`)
+  //   for (let j = 1; j < 30; j++) {
+  //     db.prepare('INSERT INTO contents (content, title, category_id) VALUES (?, ?, ?)').run(Random.cparagraph(5, 20), Random.title(5, 20), i)
+  //   }
+  // }
 
 }
 
