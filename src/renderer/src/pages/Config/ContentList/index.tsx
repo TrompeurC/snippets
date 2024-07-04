@@ -1,16 +1,11 @@
-import { memo, useEffect } from 'react'
 import dayjs from 'dayjs'
-import { Form, NavLink, Outlet, useLoaderData, useNavigate, useSubmit } from 'react-router-dom'
-import { Button, Input } from 'antd'
-import { AddFour } from '@icon-park/react';
+import { NavLink, Outlet, useLoaderData, useSubmit } from 'react-router-dom'
+import ContentListButtons from '@renderer/components/ContentListButtons';
 
 const ContentList = (() => {
   const contentList = useLoaderData() as ContentType[]
   const submit = useSubmit()
 
-  const handleAdd = () => {
-    submit(null, { method: 'POST' })
-  }
 
   const handleContextMenu = (id: number) => {
     window.electron.ipcRenderer.invoke('contextMenu', id)
@@ -22,12 +17,7 @@ const ContentList = (() => {
   return (
     <div className='flex h-full'>
       <div className='flex flex-col'>
-        <Form className='flex gap-2 px-1 my-2 pr-4'>
-          <Input name="searchWord" placeholder="搜索" onChange={(e) => submit(e.target.form)} />
-          <Button onClick={handleAdd}  >
-            <AddFour theme="outline" size="12" fill="#333" />
-          </Button>
-        </Form>
+        <ContentListButtons />
         <div className='flex-1 overflow-auto w-[240px] border-r box-border border-r-gray-200'>
           {
             contentList.map(item => (
