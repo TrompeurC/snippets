@@ -4,6 +4,7 @@ import ContentList from "@renderer/pages/Config/ContentList";
 import Content from "@renderer/pages/Config/Content";
 import Home from "@renderer/pages/Home";
 import {
+  RouteObject,
   createHashRouter,
 } from "react-router-dom";
 import CategoryLoader from "@renderer/pages/Config/Category/CategoryLoader";
@@ -12,7 +13,7 @@ import ContentLoader from "@renderer/pages/Config/Content/ContentLoader";
 import ContentListAction from "@renderer/pages/Config/ContentList/ContentListAction";
 import ContentAction from "@renderer/pages/Config/Content/ContentAction";
 
-const router = createHashRouter([
+const router: RouteObject[] = createHashRouter([
   {
     path: "/",
     element: <Home />
