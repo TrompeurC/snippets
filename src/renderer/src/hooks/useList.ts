@@ -1,12 +1,17 @@
-import { DataType } from "@renderer/context/listContext"
 import { useConfigStore } from "@renderer/store/useConfigStore"
 import { hiddenWindow } from "@renderer/utils"
 import { useCallback, useEffect } from "react"
 
 
 export const useList = () => {
-  const { list, currentId, setCurrentId, setList, setSearchValue } = useConfigStore()
-
+  const { list, currentId, setCurrentId, setList, setSearchValue } = useConfigStore((state) => ({
+    list: state.list,
+    currentId: state.currentId,
+    setCurrentId: state.setCurrentId,
+    setList: state.setList,
+    setSearchValue: state.setSearchValue
+  }))
+  console.log(list)
   const handleKeydown = useCallback((e: KeyboardEvent) => {
     if (list.length === 0) return
     const index = list.findIndex(item => item.id === currentId)
@@ -25,7 +30,7 @@ export const useList = () => {
     }
   }, [list, currentId])
 
-  const copy = (item: DataType) => {
+  const copy = (item: ContentType) => {
     setSearchValue('')
     setList([])
     navigator.clipboard.writeText(item.content)
@@ -38,6 +43,7 @@ export const useList = () => {
       document.removeEventListener('keydown', handleKeydown)
     }
   }, [handleKeydown])
+
 
   return {
     list, currentId, copy

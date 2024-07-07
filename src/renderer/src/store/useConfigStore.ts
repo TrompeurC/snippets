@@ -1,9 +1,8 @@
-import { DataType } from '@renderer/context/listContext'
 import { create } from 'zustand'
 
 interface IState {
-  list: Array<DataType>
-  setList: (list: Array<DataType>) => void
+  list: Array<ContentType>
+  setList: (list: Array<ContentType>) => void
   searchValue: string
   setSearchValue: (val: string) => void
   currentId: number
@@ -14,7 +13,7 @@ interface IState {
 
 export const useConfigStore = create<IState>((set) => ({
   list: [],
-  setList: (list) => set({ list }),
+  setList: async (list) => set({ list }),
   searchValue: '',
   setSearchValue: (searchValue) => set({ searchValue }),
   currentId: -1,
