@@ -8,6 +8,8 @@ interface IState {
   setSearchValue: (val: string) => void
   currentId: number
   setCurrentId: (id: number) => void
+  currentCategory: number
+  setCurrentCategory: (id: number) => void
 }
 
 export const useConfigStore = create<IState>((set) => ({
@@ -17,4 +19,6 @@ export const useConfigStore = create<IState>((set) => ({
   setSearchValue: (searchValue) => set({ searchValue }),
   currentId: -1,
   setCurrentId: (currentId) => set({ currentId }),
+  currentCategory: -2,
+  setCurrentCategory: (currentCategory) => set({ currentCategory })
 }))

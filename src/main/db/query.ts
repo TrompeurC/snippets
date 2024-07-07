@@ -10,7 +10,7 @@ export const insert = (sql: string, params: Record<string, any>) => {
   return db.prepare(sql).run(params).lastInsertRowid
 }
 
-export const update = (sql: string, params: Record<string, any>) => {
+export const update = async (sql: string, params: Record<string, any>) => {
   return db.prepare(sql).run(params).changes
 }
 

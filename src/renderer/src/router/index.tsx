@@ -12,6 +12,7 @@ import ContentListLoader from "@renderer/pages/Config/ContentList/ContentListLoa
 import ContentLoader from "@renderer/pages/Config/Content/ContentLoader";
 import ContentListAction from "@renderer/pages/Config/ContentList/ContentListAction";
 import ContentAction from "@renderer/pages/Config/Content/ContentAction";
+import CategoryAction from "@renderer/pages/Config/Category/CategoryAction";
 
 const router: RouteObject[] = createHashRouter([
   {
@@ -27,6 +28,7 @@ const router: RouteObject[] = createHashRouter([
         path: 'category',
         element: <Category />,
         loader: CategoryLoader,
+        action: CategoryAction,
         children: [
           {
             path: 'contentList/:cid',

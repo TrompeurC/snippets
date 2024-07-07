@@ -8,7 +8,7 @@ const ContentList = (() => {
 
 
   const handleContextMenu = (id: number) => {
-    window.electron.ipcRenderer.invoke('contextMenu', id)
+    window.electron.ipcRenderer.invoke('contextMenu', id, 'contents')
   }
   window.electron.ipcRenderer.on('refresh', () => {
     submit(null, { method: 'GET' })
